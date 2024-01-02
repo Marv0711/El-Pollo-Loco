@@ -1,0 +1,139 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('img/5_background/desert.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+    background-attachment: fixed;
+}
+
+@font-face {
+    font-family: 'zabras';
+    src: url('fonts/zabars.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
+
+canvas{
+    background-color: black;
+}
+
+.MovementDiv{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+    width: 720px;
+}
+
+.gameOverOverlay{
+    z-index: 999;
+    position: absolute;
+    overflow: hidden;
+    object-fit: cover;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -34px;
+    gap: 8px;
+    align-items: center;
+}
+
+.mobileButtons{
+    display: none;
+    background-color: transparent;
+    border: 1px groove transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.settingButton{
+    background-color: transparent;
+    border: 1px groove transparent;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    outline: none;
+}
+
+.mobile-Panel-div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.settingButton:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#winningText{
+    display: none;
+    justify-content: center;
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.mobile-button-images{
+    height: 35px;
+    width: 35px;
+}
+
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100%;
+    }
+    
+    body{
+        display: block;
+    }
+
+    .mobileButtons{
+        display: unset;
+    }
+
+    .buttons{
+        margin-top: -40px;
+    }
+
+    .MovementDiv{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas {
+        height: 100vh;
+        width: 100%;
+        display: block;
+    }
+
+    body{
+        margin: 0;
+    }
+
+    h1{
+        display: none;
+    }
+
+    body{
+        display: block;
+    }
+
+    .mobileButtons{
+        display: unset;
+    }
+
+    .buttons{
+        margin-top: -40px;
+    }
+
+    .MovementDiv{
+        display: none;
+    }
+}

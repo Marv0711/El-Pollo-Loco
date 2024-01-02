@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL POLLO LOCO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icons-buttons/favicon.png">
+    <script src="/models/drawable-object.class.js"></script>
+    <script src="/models/movebale-object.class.js"></script>
+    <script src="/models/keyboard.class.js"></script>
+    <script src="/models/statusbar.class.js"></script>
+    <script src="/models/character.class.js"></script>
+    <script src="/models/chicken.class.js"></script>
+    <script src="/models/clouds.class.js"></script>
+    <script src="/models/Background.class.js"></script>
+    <script src="/models/collecting-objects.class.js"></script>
+    <script src="/models/throwable-object.class.js"></script>
+    <script src="/models/endboss.class.js"></script>
+    <script src="/models/icon.class.js"></script>
+    <script src="/models/level.class.js"></script>
+    <script src="/levels/level1.js"></script>
+    <script src="/models/screen.class.js"></script>
+    <script src="/models/world.class.js"></script>
+    <script src="/js/game.js"></script>
+</head>
+<body onload="init()">
+    <h1>El Pollo Loco</h1>
+    <div id="fullscreen">
+        <img id="gameOverOverlay" class="gameOverOverlay" src="img/9_intro_outro_screens/game_over/oh no you lost!.png">
+        <canvas id="canvas" width="720px" height="480px"></canvas>
+        <div class="buttons">
+            <div class="panel-Move">
+                <button onclick="mobilePress(this.id, 'left')" id="btnLeft" class="mobileButtons"><img class="mobile-button-images" src="img/icons-buttons/left.png"></button>
+                <button onclick="mobilePress(this.id, 'right')" id="btnRight" class="mobileButtons"><img class="mobile-button-images" src="img/icons-buttons/right.png"></button>
+            </div>
+            <div>
+                <button class="settingButton" onclick="enterExitFullscreen(document.getElementById('fullscreen'))"><img src="img/icons-buttons/fullscreen.png"></button>
+                <button class="settingButton" onclick="musicOffOn()"><img id="soundOnOff" src="img/icons-buttons/soundOn.png"></button>
+                <button class="settingButton" onclick="location.reload()"><img src="img/icons-buttons/restart.png"></button>
+            </div>
+            <div class="panel-Aktion">
+                <button onclick="mobilePress(this.id, 'space')" id="btnJump" class="mobileButtons"><img class="mobile-button-images" src="img/icons-buttons/jump.png"></button>
+                <button onclick="mobilePress(this.id, 'throw')" id="btnAttack" class="mobileButtons"><img class="mobile-button-images" src="img/icons-buttons/attack.png"></button>
+            </div>
+            </div>
+        </div>
+        <div class="MovementDiv">
+            <div>WalkLeft: A/ArrowLeft</div>
+            <div>WalkRight: D/ArrowRight</div>
+            <div>Jump: Space/ArrowUp</div>
+            <div>Attack: S/ArrowDown</div>
+        </div>
+        <div id="winningText">
+            Howdy, du hast Gewonnen! Restarte das Game für noch eine Runde.
+        </div>
+    </div>
+</body>
+</html>
